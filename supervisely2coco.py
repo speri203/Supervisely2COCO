@@ -33,7 +33,6 @@ def convert_supervisely_to_coco(meta_path,
 
     TODO: 
     - tags: e.g train, val
-    - Segmentation, for now just converting the bbox (for detection)
     """ 
 
     ann_fnames, ann_jsons = get_all_ann_file(ann_base_dir)
