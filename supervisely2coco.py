@@ -1,5 +1,6 @@
 ## 
 # Author: Caio Marcellos
+# Modifier: Sai Peri
 # Email: caiocuritiba@gmail.com
 ##
 import os
@@ -131,13 +132,13 @@ def convert_single_image(idimg, fname_img, json_suprv, map_category, imgs_base_d
         {
             "id": start_annotation_id + i,
             "image_id": idimg,
-            "segmentation": [],
+            "segmentation": [extr],
             "area": bbox[2]*bbox[3],
             "bbox": bbox,
             "category_id": map_category[obj['classTitle']],
             "iscrowd": 0
         }
-        for i, (obj, bbox) in enumerate(zip(objects, bboxes))
+        for i, (obj, bbox, extr) in enumerate(zip(objects, bboxes, obj_exteriors))
     ]
     #print(ann)
 
